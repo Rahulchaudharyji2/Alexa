@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexa Gaming Interface</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+      background-color: #0d1117; /* Dark background */
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.3; /* Dimmed for a gaming effect */
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+
+    .heading {
+      margin-top: 100px;
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px #ff4500;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, #ff4500, #ff8c00);
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      color: white;
+      font-size: 1.2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 69, 0, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.8);
+    }
+
+    .fa-microphone {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Video -->
+  <video class="background-video" autoplay muted loop>
+    <source src="../static/Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Foreground Content -->
+  <div class="content">
+    <h1 class="heading">Welcome to Alexa Gaming Interface</h1>
+    <form method="POST" action="/" enctype="multipart/form-data">
+      <h2 class="heading" style="margin-top: 50px;">Tap to Speak</h2>
+      <button type="submit" class="btn btn-primary" title="Tap to Speak">
+        <i class="fa fa-microphone"></i>
+      </button>
+    </form>
+  </div>
+</body>
+</html>
